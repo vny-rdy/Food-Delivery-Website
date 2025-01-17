@@ -24,7 +24,7 @@ const NewUserSignup = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5001/api/auth/signup", {
+      const response = await axios.post("https://food-delivery-website-6y8r.onrender.com/api/auth/signup", {
         phone,
         username,
         password,
@@ -47,7 +47,7 @@ const NewUserSignup = () => {
 
     if (response.credential) {
       try {
-        const { data } = await axios.post("http://localhost:5001/api/google-auth/google-login", {
+        const { data } = await axios.post("https://food-delivery-website-6y8r.onrender.com/api/google-auth/google-login", {
           token: response.credential,
         });
 
