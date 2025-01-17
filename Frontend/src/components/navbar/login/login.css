@@ -1,0 +1,51 @@
+.submenul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 225px;
+    padding: 0;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: all 0.3s ease;
+  }
+  
+  .menu-iteml {
+    padding: 10px 10px;
+    color: #83818c;
+    position: relative;
+  }
+  
+  .submenul li {
+    background: white;
+    gap: 2px;
+    width: 100%;
+    cursor: pointer;
+    padding: 6px;
+    border: solid rgb(161, 159, 159);
+    border-width: 0px 0px 0px 0px;
+  }
+  
+  .menu-iteml:hover .submenul {
+    visibility: visible;
+    opacity: 1;
+    top: 60px;
+    transform: translateY(0px);
+  }
+  
+  .menu-iteml:before {
+    content: "";
+    height: 3px;
+    position: absolute;
+    background-color: #00ABC7;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 8px;
+    transform: scaleX(0); 
+    transition: transform 0.3s ease;
+  }
+  

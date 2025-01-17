@@ -1,0 +1,96 @@
+/* Base Styles for Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: #f8f8f8;
+}
+
+/* Mobile Menu Toggle */
+@media screen and (max-width: 1024px) {
+  .lg\\:hidden {
+    display: block;
+  }
+
+  .lg\\:block {
+    display: none;
+  }
+
+  /* Center logo and hamburger on mobile */
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .hamburger-menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 100;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links .menu-item {
+    padding: 10px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+
+  .navbar-links .menu-item:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Close mobile menu when item is clicked */
+  .navbar-links .menu-item:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1025px) {
+  .lg\\:block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .navbar-links .menu-item {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .navbar-links .menu-item:hover {
+    background-color: #e0e0e0;
+  }
+}
