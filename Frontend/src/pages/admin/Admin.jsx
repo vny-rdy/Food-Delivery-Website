@@ -27,7 +27,7 @@ const Admin = () => {
 
     const fetchMenuItems = async () => {
         try {
-            const response = await axios.get("http://localhost:5001/api/menus/menu");
+            const response = await axios.get("https://food-delivery-website-sepia-tau.vercel.app/api/menus/menu");
             // Ensure response is an array
             if (Array.isArray(response.data)) {
                 setMenuItems(response.data);
@@ -63,14 +63,14 @@ const Admin = () => {
         try {
             if (isEditing) {
                 // Update item
-                await axios.put(`http://localhost:5001/api/menus/menu/${formState.id}`, formData, {
+                await axios.put(`https://food-delivery-website-sepia-tau.vercel.app/api/menus/menu/${formState.id}`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data", // Set the content type for file uploads
                     },
                 });
             } else {
                 // Add new item
-                await axios.post("http://localhost:5001/api/menus/menu", formData, {
+                await axios.post("https://food-delivery-website-sepia-tau.vercel.app/api/menus/menu", formData, {
                     headers: {
                         "Content-Type": "multipart/form-data", // Set the content type for file uploads
                     },
@@ -98,7 +98,7 @@ const Admin = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5001/api/menus/menu/${id}`);
+            await axios.delete(`https://food-delivery-website-sepia-tau.vercel.app/api/menus/menu/${id}`);
             fetchMenuItems();
         } catch (error) {
             console.error("Failed to delete menu item:", error);
