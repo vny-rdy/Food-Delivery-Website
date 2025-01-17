@@ -21,7 +21,7 @@ const Menu = () => {
     useEffect(() => {
         const fetchMenuItems = async () => {
             try {
-                const response = await axios.get("http://localhost:5001/api/menus/menu");
+                const response = await axios.get("https://food-delivery-website-6y8r.onrender.com/api/menus/menu");
                 const itemsWithQuantity = response.data.map(item => ({ ...item, quantity: 1 }));
                 setMenuItems(itemsWithQuantity);
                 setFilteredItems(itemsWithQuantity);
@@ -84,7 +84,7 @@ const Menu = () => {
             console.log("Cart Item:", cartItem); // Log the cart item
     
             try {
-                await axios.post("http://localhost:5001/api/cart/addToCart", cartItem);
+                await axios.post("https://food-delivery-website-6y8r.onrender.com/api/cart/addToCart", cartItem);
     
                 // Update frontend state
                 const existingItemIndex = cart.findIndex((i) => i._id === item._id);
@@ -131,7 +131,7 @@ const Menu = () => {
         };
     
         try {
-            await axios.post("http://localhost:5001/api/order/confirmOrder", orderData);
+            await axios.post("https://food-delivery-website-6y8r.onrender.com/api/order/confirmOrder", orderData);
     
             // Navigate to the order page with the confirmed order
             navigate(`/order/${user}`, { state: { order: orderData } });
@@ -189,7 +189,7 @@ const Menu = () => {
                     {filteredItems.map((item) => (
                         <div key={item._id} className="border p-4 rounded shadow">
                             <img
-                                src={`http://localhost:5001/${item.image}`}
+                                src={`https://food-delivery-website-6y8r.onrender.com/${item.image}`}
                                 alt={item.name}
                                 className="w-full h-40 object-cover mb-4"
                             />
