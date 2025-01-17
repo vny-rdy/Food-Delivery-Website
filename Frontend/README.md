@@ -27,7 +27,7 @@ This is a food delivery website built with **React.js**, **Node.js**, and **Mong
 ### 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/vny-rdy/Food-Delivery-Website.git
 ```
 
 ### 2. Install dependencies for both frontend and backend:
