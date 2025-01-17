@@ -9,7 +9,7 @@ const SearchBar = ({ onSearchResults }) => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:5001/api/menus/menu?search=${searchQuery}`);
+      const response = await axios.get(`https://food-delivery-website-6y8r.onrender.com/api/menus/menu?search=${searchQuery}`);
       const results = response.data;
       console.log('Search Results:', results);
       onSearchResults(results); // Pass results to the parent component or state
