@@ -19,7 +19,7 @@ const Signup = () => {
 
   const handleSendOtp = async () => {
     try {
-      const response = await axios.post("http://localhost:5001/api/auth/send-otp", { phone });
+      const response = await axios.post("https://food-delivery-website-sepia-tau.vercel.app/api/auth/send-otp", { phone });
       if (response.data.success) {
         setOtpSent(true);
         alert("OTP sent successfully!");
@@ -39,7 +39,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5001/api/auth/verify-otp", { phone, otp });
+      const response = await axios.post("https://food-delivery-website-sepia-tau.vercel.app/api/auth/verify-otp", { phone, otp });
       if (response.data.success) {
         setShowUsernameSection(true); // Show username section after OTP verification
       } else {
@@ -71,7 +71,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5001/api/auth/set-username", { phone, username, password });
+      const response = await axios.post("https://food-delivery-website-sepia-tau.vercel.app/api/auth/set-username", { phone, username, password });
       if (response.data.success) {
         localStorage.setItem("username", username);
         alert("Username and password set successfully!");
@@ -95,7 +95,7 @@ const Signup = () => {
     if (response.credential) {
       try {
         // Send the Google token to the backend for verification
-        const { data } = await axios.post('http://localhost:5001/api/google-auth/google-login', {
+        const { data } = await axios.post('https://food-delivery-website-sepia-tau.vercel.app/api/google-auth/google-login', {
           token: response.credential,  // Send the Google token here
         });
   
