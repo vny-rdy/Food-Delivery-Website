@@ -18,7 +18,7 @@ const Cart = () => {
 
         const fetchCartItems = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/cart/${user}`);
+                const response = await axios.get(`https://food-delivery-website-6y8r.onrender.com/api/cart/${user}`);
                 setCartItems(response.data.items || []);
                 setLoading(false);
             } catch (err) {
@@ -33,7 +33,7 @@ const Cart = () => {
 
     const handleRemoveItem = async (itemId) => {
         try {
-            const response = await axios.post(`http://localhost:5001/api/cart/removeItem`, { user, itemId });
+            const response = await axios.post(`https://food-delivery-website-6y8r.onrender.com/api/cart/removeItem`, { user, itemId });
             setCartItems(response.data.items); // Update the cart after removing the item
             alert("Item removed from cart successfully!");
         } catch (error) {
@@ -74,7 +74,7 @@ const Cart = () => {
                             {cartItems.map((item) => (
                                 <li key={item._id} className="flex gap-4 items-center p-4 border-b">
                                     <img
-                                        src={`http://localhost:5001/${item.image}`}
+                                        src={`https://food-delivery-website-6y8r.onrender.com/${item.image}`}
                                         alt={item.itemName}
                                         className="w-20 h-20 object-cover"
                                     />
