@@ -87,7 +87,7 @@ const OrderPage = () => {
         <h1 className="text-2xl font-bold text-gray-800 text-center mb-6">Your Order</h1>
         <div className="flex flex-col items-center">
           <img
-            src={`http://localhost:5001/${order.image}`}
+            src={`https://food-delivery-website-6y8r.onrender.com/${order.image}`}
             alt={order.itemName}
             className="w-48 h-48 object-cover rounded-md shadow mb-4"
           />
