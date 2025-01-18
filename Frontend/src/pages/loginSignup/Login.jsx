@@ -15,7 +15,7 @@ const Login = () => {
       return;
     }
     try {
-      const response = await axios.post('https://food-delivery-website-6y8r.onrender.com/api/auth/login', { username, password });
+      const response = await axios.post('https://food-delivery-website-i79e.onrender.com/api/auth/login', { username, password });
       if (response.data.success) {
         localStorage.setItem('username', username);  // Store user info (e.g., token or username)
         navigate('/');  // Redirect to a dashboard or home page
