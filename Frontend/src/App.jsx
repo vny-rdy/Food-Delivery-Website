@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import { GoogleOAuthProvider } from '@react-oauth/google'; 
+
 import './App.css'
 import Home from './pages/Home';
 import Signup from './pages/loginSignup/Signup';
@@ -18,7 +18,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <GoogleOAuthProvider clientId="1020928591827-6t6ttnsfitqqetu47lq9ek841i3kgcsn.apps.googleusercontent.com">
+
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -34,7 +34,7 @@ function App() {
 
       </Routes>
     </Router>
-     </GoogleOAuthProvider>
+
   )
 }
 
