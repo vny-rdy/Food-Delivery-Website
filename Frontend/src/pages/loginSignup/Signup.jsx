@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { GoogleLogin } from '@react-oauth/google'; // You need to install this package
 import './signup.css';
 import NewUserSignup from "./NewUserSignUp";
 
@@ -89,29 +88,6 @@ const Signup = () => {
     navigate("/login");
   };
 
-  const handleGoogleSignIn = async (response) => {
-    console.log('Google login response:', response);
-  
-    if (response.credential) {
-      try {
-        // Send the Google token to the backend for verification
-        const { data } = await axios.post('https://food-delivery-website-i79e.onrender.com/api/google-auth/google-login', {
-          token: response.credential,  // Send the Google token here
-        });
-  
-        if (data.success) {
-          alert('Google login successful!');
-          // Handle the successful login (e.g., navigate or store user data)
-          navigate('/');
-        } else {
-          alert('Google login failed');
-        }
-      } catch (error) {
-        console.error('Error during Google login:', error);
-        alert('An error occurred during Google login.');
-      }
-    }
-  };
   
   return (
     <div className="signup-container">
@@ -174,13 +150,7 @@ const Signup = () => {
         </div>
       )}
 
-      <div className="google-signin">
-        <GoogleLogin
-          onSuccess={handleGoogleSignIn} // Handle success response
-          onError={() => alert('Google login failed!')}
-          useOneTap
-        />
-      </div>
+    
       <div className="login-container text-center">
         <p>Already have an account? <button onClick={handleLogin} className="btn-link text-blue-500 hover:font-semibold">Login</button></p>
       </div>
