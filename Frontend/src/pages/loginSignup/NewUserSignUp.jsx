@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { GoogleLogin } from "@react-oauth/google"; // Ensure this package is installed
+
 import "./signup.css";
 
 const NewUserSignup = () => {
@@ -39,28 +39,6 @@ const NewUserSignup = () => {
     } catch (error) {
       console.error("Error during signup:", error.response?.data || error.message);
       alert("Signup failed. Please try again.");
-    }
-  };
-
-  const handleGoogleSignIn = async (response) => {
-    console.log("Google login response:", response);
-
-    if (response.credential) {
-      try {
-        const { data } = await axios.post("https://food-delivery-website-i79e.onrender.com/api/google-auth/google-login", {
-          token: response.credential,
-        });
-
-        if (data.success) {
-          alert("Google login successful!");
-          navigate("/");
-        } else {
-          alert("Google login failed");
-        }
-      } catch (error) {
-        console.error("Error during Google login:", error);
-        alert("An error occurred during Google login.");
-      }
     }
   };
 
@@ -104,13 +82,6 @@ const NewUserSignup = () => {
         <button onClick={handleSignup} className="btn-primary">Signup</button>
       </div>
 
-      <div className="google-signin">
-        <GoogleLogin
-          onSuccess={handleGoogleSignIn}
-          onError={() => alert("Google login failed!")}
-          useOneTap
-        />
-      </div>
       <div className="login-container text-center">
         <p>
           Already have an account?{" "}
