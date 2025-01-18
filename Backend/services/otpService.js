@@ -2,7 +2,7 @@ const twilio = require("twilio");
 const Otp =require('../models/otpModel')
 // Twilio credentials from your Twilio account
 const accountSid = "ACefa706e9d2bb71d37678d74c9d880a4b"; // Twilio Account SID
-const authToken = "363c93945c4e9aa8e0b6965b8774ba93";   // Twilio Auth Token
+const authToken = "668b0f65d292beef9ff610ddc325ce5d";   // Twilio Auth Token
 const client = twilio(accountSid, authToken);
 
 
