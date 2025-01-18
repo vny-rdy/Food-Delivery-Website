@@ -60,7 +60,7 @@ const Login = () => {
                         </h1>
                         <button
                             className='hover:bg-slate-400 p-2 rounded-lg hover:text-black'
-                            onClick={() => (window.location.href = '/signup')} // Ensure you use React Router
+                            onClick={() => navigate('/signup')} // Ensure you use React Router
                         >
                             Sign Up
                         </button>
